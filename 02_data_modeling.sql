@@ -41,7 +41,7 @@ INSERT INTO hub_customers (customer_id, customer_name) VALUES (101, 'Alice');
 INSERT INTO hub_products (product_id, product_name) VALUES (1001, 'Widget');
 INSERT INTO link_sales (transaction_id, customer_id, product_id, sale_date) VALUES (1, 101, 1001, '2024-10-31');
 
--- Incremental Loading. Modify scripts to add only new records. Example with an imaginary table called "staging_sales" --
+-- Incremental Loading. Modify scripts to add only new records. Example with a source table called "staging_sales" --
 INSERT INTO link_sales (transaction_id, customer_id, product_id, sale_date)
 SELECT transaction_id, customer_id, product_id, sale_date
 FROM staging_sales
